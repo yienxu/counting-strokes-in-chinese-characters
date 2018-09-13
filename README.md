@@ -1,1 +1,1 @@
-# stat-479-final-project
+# Stat-479-final-project
