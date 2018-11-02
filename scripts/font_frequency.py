@@ -58,6 +58,8 @@ if __name__ == '__main__':
 
     if args.generate:
         for i, char in enumerate(CHARS):
+            if char.endswith('.DS_Store'):
+                continue
             char_path = PATH + char + '/'
             fonts = os.listdir(char_path)
             for font in fonts:
