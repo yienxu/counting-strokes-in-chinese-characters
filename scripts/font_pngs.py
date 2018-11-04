@@ -3,7 +3,7 @@ import shutil
 import sys
 
 CHARS = None
-FONT_NAME = 'PingFang5ttf.png'
+FONT_NAME = 'simheittf.png'
 PATH_TO_PNGS = '/Users/yienxu/Desktop/479data/CharactersTrimPad28/'
 DEST_PATH = '/Users/yienxu/Desktop/479data/{}/'.format(FONT_NAME.split('.')[0])
 print(DEST_PATH)
@@ -38,4 +38,4 @@ if __name__ == '__main__':
             count += 1
         loadingBar(i, total_chars, 1)
 
-    print("Done! Total PNG files copied: {}".format(count))
+    print("\nDone! Total PNG files copied: {}".format(count))
