@@ -1,23 +1,18 @@
 import argparse
-import heapq
 import os
 import pickle
 import sys
 
-import numpy as np
 import pandas as pd
 
-CHARS = None
-HEAP = []
 FREQ = {}
-PATH = None
 
 
 def build_parser():
     p = argparse.ArgumentParser(
         description='Get the number of characters that a font supports.')
     p.add_argument('path_to_dataset',
-                   metavar='PATH',
+                   metavar='PATH_TO_PNGS',
                    type=str,
                    nargs=1,
                    help='path to the super large dataset')
@@ -50,17 +45,17 @@ if __name__ == '__main__':
     parser = build_parser()
     args = parser.parse_args()
 
-    PATH = args.path_to_dataset[0] + '/'
-    CHARS = list(filter(lambda x: not os.path.isdir(x), os.listdir(PATH)))
+    path = args.path_to_dataset[0] + '/'
+    chars = list(filter(lambda x: not os.path.isdir(x), os.listdir(path)))
 
-    total_chars = len(CHARS)
+    total_chars = len(chars)
     print('We have {} characters in total.'.format(total_chars))
 
     if args.generate:
-        for i, char in enumerate(CHARS):
+        for i, char in enumerate(chars):
             if char.endswith('.DS_Store'):
                 continue
-            char_path = PATH + char + '/'
+            char_path = path + char + '/'
             fonts = os.listdir(char_path)
             for font in fonts:
                 add_char_to_font(char, font)
@@ -71,10 +66,16 @@ if __name__ == '__main__':
         with open('freq.pickle', 'rb') as f:
             FREQ = pickle.load(f)
 
-    for k, v in FREQ.items():
-        heapq.heappush(HEAP, (-len(v), k))
+    counts = []
+    fonts = []
 
-    for i in range(args.view):
-        count, font = heapq.heappop(HEAP)
-        count = -count
-        print(count, font)
+    for k, v in FREQ.items():
+        counts.append(len(v))
+        fonts.append(k)
+
+    df = pd.DataFrame({'Count': counts, 'Font': fonts})
+    df = df.sort_values(by=['Count'], ascending=False)
+    if args.generate:
+        df.to_csv('freq.csv', index=False)
+    else:
+        print(df.head(args.view))
