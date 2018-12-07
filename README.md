@@ -1,3 +1,10 @@
-# Counting Strokes in Chinese Characters
+## Counting Strokes in Chinese Characters
 
-## Yien Xu, Yuqi Lin and Scott Lai
+Authors: 
+
+Yien Xu (yien.xu@wisc.edu)
+
+Yuqi Lin (ylin273@wisc.edu)
+
+Scott Lai (qlai5@wisc.edu)
+
