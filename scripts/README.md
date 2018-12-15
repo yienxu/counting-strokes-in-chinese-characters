@@ -21,3 +21,7 @@ This script is used to generate a data frame whose rows contain information abou
 #### `gen_dataset.py`
 
 This script is used to generate our final dataset, which contains a character, its stroke counts, and 784 (28*28) columns, each corresponding to a pixel in the image.
+
+#### `df_visualization.py`
+
+This script is used to visualize our dataset. It plots a histogram of character counts categorized by stroke numbers.
