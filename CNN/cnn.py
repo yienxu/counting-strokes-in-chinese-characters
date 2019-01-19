@@ -20,7 +20,7 @@ print(df.shape)
 
 df = df.sample(frac=1)
 
-X = df.iloc[:, 2:28 ** 2 + 2].astype(np.float32)
+X = 1.0 - df.iloc[:, 2:28 ** 2 + 2].astype(np.float32)
 y = df['count'].astype(int)
 
 y = y - 2
