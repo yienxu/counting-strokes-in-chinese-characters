@@ -15,3 +15,7 @@ We use machine learning algorithms to count stroke number of Chinese characters 
 #### Contribution
 
 Yuqi Lin found the Unihan Database that contains stroke count information of Chinese characters. In addition, she coded the complete version of the kNN model, using PCA and `GridSearchCV`. She also wrote code for the Logistic Regression model. Yien Xu processed the original dataset and turned it into a single csv file. He also coded the rest of the models, including Logistic Regression with Bagging and Max-Pooling, and the CNN. Both Yien and Yuqi worked together and finished the project report. Finally, Scott Lai did minor contribution to the project. He found the original dataset from the web that contains 15 million images. He also coded the kNN model at a very superficial level.
+
+#### Report
+
+Please find our project proposal [here](Proposal.pdf) and project final report [here](Final Report.pdf).
