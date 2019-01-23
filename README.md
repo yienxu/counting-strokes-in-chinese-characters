@@ -18,4 +18,4 @@ Yuqi Lin found the Unihan Database that contains stroke count information of Chi
 
 #### Report
 
-Please find our project proposal [here](Proposal.pdf) and project final report [here](Final Report.pdf).
+Please find our project proposal [here](Proposal.pdf) and project final report [here](Report.pdf).
